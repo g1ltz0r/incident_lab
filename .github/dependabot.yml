@@ -1,0 +1,28 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    cooldown:
+      default-days: 7
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      dependencies-minor-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+      dependencies-major:
+        patterns: ["*"]
+        update-types: ["major"]
+  - package-ecosystem: github-actions
+    cooldown:
+      default-days: 7
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions-minor-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+      actions-major:
+        patterns: ["*"]
+        update-types: ["major"]
